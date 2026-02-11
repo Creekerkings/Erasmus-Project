@@ -9,7 +9,7 @@ let gameState = {
         cherry: { unlocked: false, icon: '🍁', bonus: 2, cost: 500, name: 'Cherry Wood' },
         jungle: { unlocked: false, icon: '🌲', bonus: 3, cost: 2000, name: 'Jungle Wood' },
         dark_oak: { unlocked: false, icon: '🌰', bonus: 5, cost: 10000, name: 'Dark Oak Wood' },
-        Spruce: { unlocked: false, icon: '🪵', bonus: 10, cost: 50000, name: 'Spruce Wood' }
+        spruce: { unlocked: false, icon: '🪵', bonus: 10, cost: 50000, name: 'Spruce Wood' }
     },
     upgrades: {
         doubleSwing: { level: 0, maxLevel: 10, baseCost: 50, costMultiplier: 2 },
@@ -320,6 +320,61 @@ function resetGame() {
 function setupEventListeners() {
     document.getElementById('chopButton').addEventListener('click', chopWood);
     document.getElementById('resetButton').addEventListener('click', resetGame);
+    
+    // Audio setup
+    const bgMusic = document.getElementById('bgMusic');
+    
+    if (bgMusic) {
+        // Set volume
+        bgMusic.volume = 0.5;
+        
+        // Try to play - handle autoplay blocking
+        const playPromise = bgMusic.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Autoplay started successfully
+                console.log('Background music playing');
+            }).catch(error => {
+                // Autoplay was prevented - show play button
+                console.log('Autoplay blocked - user interaction needed');
+                createPlayButton();
+            });
+        }
+    }
+}
+
+// Create a play button when autoplay is blocked
+function createPlayButton() {
+    const playBtn = document.createElement('button');
+    playBtn.id = 'playMusicButton';
+    playBtn.innerHTML = 'Click to Enable Music';
+    playBtn.style.position = 'fixed';
+    playBtn.style.top = '20px';
+    playBtn.style.right = '20px';
+    playBtn.style.padding = '15px 25px';
+    playBtn.style.background = '#4CAF50';
+    playBtn.style.color = 'white';
+    playBtn.style.border = 'none';
+    playBtn.style.borderRadius = '10px';
+    playBtn.style.cursor = 'pointer';
+    playBtn.style.fontSize = '1rem';
+    playBtn.style.fontWeight = '600';
+    playBtn.style.zIndex = '1000';
+    playBtn.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+    playBtn.style.fontFamily = "'Poppins', sans-serif";
+    
+    playBtn.addEventListener('click', () => {
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.play().then(() => {
+            playBtn.remove();
+            console.log('Music started after user interaction');
+        }).catch(error => {
+            console.error('Error playing music:', error);
+        });
+    });
+    
+    document.body.appendChild(playBtn);
 }
 
 // Start game when page loads

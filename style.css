@@ -56,12 +56,6 @@ h1 {
     margin-bottom: 10px;
 }
 
-.title-icon {
-    font-size: 4rem;
-    animation: swing 2s ease-in-out infinite;
-    transform-origin: top center;
-}
-
 .title-text {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 5rem;
@@ -558,10 +552,6 @@ footer {
     .title-text {
         font-size: 2.5rem;
         letter-spacing: 4px;
-    }
-    
-    .title-icon {
-        font-size: 2.5rem;
     }
     
     .chop-button {

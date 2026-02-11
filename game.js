@@ -88,7 +88,7 @@ function chopWood() {
     gameState.totalClicks++;
     
     // Visual feedback
-    createFloatingText('+$' + earnedMoney);
+    createFloatingText('+€' + earnedMoney);
     
     updateUI();
     saveGame();
@@ -142,7 +142,7 @@ function switchWood(woodType) {
             renderWoodTypes();
             saveGame();
         } else {
-            alert(`Not enough money! You need $${wood.cost}`);
+            alert(`Not enough money! You need €${wood.cost}`);
         }
     } else {
         gameState.currentWood = woodType;
@@ -167,7 +167,7 @@ function buyUpgrade(upgradeKey) {
         updateUI();
         saveGame();
     } else {
-        alert(`Not enough money! You need $${cost}`);
+        alert(`Not enough money! You need €${cost}`);
     }
 }
 
@@ -203,7 +203,7 @@ function renderWoodTypes() {
                 <span class="wood-name">${wood.name}</span>
             </div>
             <div class="wood-bonus">${bonusText}</div>
-            ${!wood.unlocked ? `<div class="wood-cost">Cost: $${wood.cost.toLocaleString()}</div>` : ''}
+            ${!wood.unlocked ? `<div class="wood-cost">Cost: €${wood.cost.toLocaleString()}</div>` : ''}
         `;
         
         woodDiv.addEventListener('click', () => switchWood(key));
@@ -241,7 +241,7 @@ function renderUpgrades() {
             </div>
             <div class="upgrade-description">${info.description}</div>
             <button class="upgrade-button" data-upgrade="${key}">
-                ${isMaxLevel ? 'MAX LEVEL' : `Buy: $${cost.toLocaleString()}`}
+                ${isMaxLevel ? 'MAX LEVEL' : `Buy: €${cost.toLocaleString()}`}
             </button>
         `;
         

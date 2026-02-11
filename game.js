@@ -7,15 +7,15 @@ let gameState = {
         oak: { unlocked: true, icon: '🌳', bonus: 1, cost: 0, name: 'Oak Wood' },
         birch: { unlocked: false, icon: '🌲', bonus: 1.5, cost: 100, name: 'Birch Wood' },
         maple: { unlocked: false, icon: '🍁', bonus: 2, cost: 500, name: 'Maple Wood' },
-        pine: { unlocked: false, icon: '🌲', bonus: 3, cost: 20000, name: 'Pine Wood' },
-        walnut: { unlocked: false, icon: '🌰', bonus: 5, cost: 100000, name: 'Walnut Wood' },
-        mahogany: { unlocked: false, icon: '🪵', bonus: 10, cost: 2000000, name: 'Mahogany Wood' }
+        pine: { unlocked: false, icon: '🌲', bonus: 3, cost: 2000, name: 'Pine Wood' },
+        walnut: { unlocked: false, icon: '🌰', bonus: 5, cost: 10000, name: 'Walnut Wood' },
+        mahogany: { unlocked: false, icon: '🪵', bonus: 10, cost: 50000, name: 'Mahogany Wood' }
     },
     upgrades: {
-        doubleSwing: { level: 0, maxLevel: 10, baseCost: 50, costMultiplier: 3 },
-        sharpAxe: { level: 0, maxLevel: 10, baseCost: 200, costMultiplier: 5 },
-        strongArms: { level: 0, maxLevel: 10, baseCost: 1000, costMultiplier: 8 },
-        autoChop: { level: 0, maxLevel: 5, baseCost: 5000, costMultiplier: 10 }
+        doubleSwing: { level: 0, maxLevel: 10, baseCost: 50, costMultiplier: 2 },
+        sharpAxe: { level: 0, maxLevel: 10, baseCost: 200, costMultiplier: 2.5 },
+        strongArms: { level: 0, maxLevel: 10, baseCost: 1000, costMultiplier: 3 },
+        autoChop: { level: 0, maxLevel: 5, baseCost: 5000, costMultiplier: 4 }
     }
 };
 
@@ -167,8 +167,7 @@ function buyUpgrade(upgradeKey) {
         updateUI();
         saveGame();
     } else {
-        alert(`Not enough money! You need $${cost}`); //no alert, just a visual feedback
-        
+        alert(`Not enough money! You need $${cost}`);
     }
 }
 

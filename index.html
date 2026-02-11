@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumber Tycoon - Build Your Wood Empire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-decoration"></div>
+
+    <div class="container">
+        <header>
+            <h1>
+                <span class="title-icon">🪓</span>
+                <span class="title-text">LUMBER TYCOON</span>
+            </h1>
+            <p class="subtitle">Build Your Wood Empire</p>
+        </header>
+
+        <main class="game-grid">
+            <!-- LEFT PANEL: Wood Types -->
+            <aside class="wood-panel">
+                <div class="panel-header">
+                    <h2>🌲 Wood Types</h2>
+                </div>
+                <div id="woodTypes" class="wood-types-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </aside>
+
+            <!-- CENTER PANEL: Chopping Area -->
+            <section class="chop-panel">
+                <div class="current-wood-display">
+                    <div class="wood-icon-large" id="currentWoodIcon">🌳</div>
+                    <h3 id="currentWoodName">Oak Wood</h3>
+                    <p class="wood-multiplier" id="currentWoodMultiplier">×1 Multiplier</p>
+                </div>
+
+                <button id="chopButton" class="chop-button">
+                    <span class="chop-icon">🪓</span>
+                    <span class="chop-text">CHOP!</span>
+                </button>
+
+                <div class="chop-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Chops:</span>
+                        <span class="stat-value" id="totalClicks">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: Money Stats & Upgrades -->
+            <aside class="stats-panel">
+                <div class="money-display">
+                    <div class="money-label">Your Money</div>
+                    <div class="money-amount">
+                        <span class="currency">$</span>
+                        <span id="money">0</span>
+                    </div>
+                    <div class="money-per-click">
+                        <span id="moneyPerClick">1</span>$ per chop
+                    </div>
+                </div>
+
+                <div class="panel-header">
+                    <h2>⚡ Upgrades</h2>
+                </div>
+                <div id="upgrades" class="upgrades-container">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <button id="resetButton" class="reset-button">Reset Game</button>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

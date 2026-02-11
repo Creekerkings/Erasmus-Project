@@ -6,10 +6,10 @@ let gameState = {
     woodTypes: {
         oak: { unlocked: true, icon: '🌳', bonus: 1, cost: 0, name: 'Oak Wood' },
         birch: { unlocked: false, icon: '🌲', bonus: 1.5, cost: 100, name: 'Birch Wood' },
-        maple: { unlocked: false, icon: '🍁', bonus: 2, cost: 500, name: 'Maple Wood' },
-        pine: { unlocked: false, icon: '🌲', bonus: 3, cost: 2000, name: 'Pine Wood' },
-        walnut: { unlocked: false, icon: '🌰', bonus: 5, cost: 10000, name: 'Walnut Wood' },
-        mahogany: { unlocked: false, icon: '🪵', bonus: 10, cost: 50000, name: 'Mahogany Wood' }
+        cherry: { unlocked: false, icon: '🍁', bonus: 2, cost: 500, name: 'Cherry Wood' },
+        jungle: { unlocked: false, icon: '🌲', bonus: 3, cost: 2000, name: 'Jungle Wood' },
+        dark_oak: { unlocked: false, icon: '🌰', bonus: 5, cost: 10000, name: 'Dark Oak Wood' },
+        Spruce: { unlocked: false, icon: '🪵', bonus: 10, cost: 50000, name: 'Spruce Wood' }
     },
     upgrades: {
         doubleSwing: { level: 0, maxLevel: 10, baseCost: 50, costMultiplier: 2 },
@@ -291,10 +291,10 @@ function loadGame() {
             const defaultWoodTypes = {
                 oak: { name: 'Oak Wood' },
                 birch: { name: 'Birch Wood' },
-                maple: { name: 'Maple Wood' },
-                pine: { name: 'Pine Wood' },
-                walnut: { name: 'Walnut Wood' },
-                mahogany: { name: 'Mahogany Wood' }
+                cherry: { name: 'Cherry Wood' },
+                jungle: { name: 'Jungle Wood' },
+                dark_oak: { name: 'Dark Oak Wood' },
+                spruce: { name: 'Spruce Wood' }
             };
             
             for (const [key, wood] of Object.entries(gameState.woodTypes)) {

@@ -290,6 +290,18 @@ h1 {
     width: 100px;
 }
 
+.lightning {
+    width: 12px;
+}
+
+.strongarm {
+    width: 18px;
+}
+
+.robot {
+    width: 25px;
+}
+
 .chop-text {
     display: block;
 }

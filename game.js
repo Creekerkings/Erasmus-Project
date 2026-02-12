@@ -77,7 +77,7 @@ function changeUIColors(woodType) {
 const upgradeInfo = {
     doubleSwing: {
         name: 'Double Swing',
-        icon: '⚡',
+        icon: '<img class="lightning" src="assets/lightningbolt.png" alt="lightning">',
         description: 'Doubles your money per chop'
     },
     sharpAxe: {
@@ -87,12 +87,12 @@ const upgradeInfo = {
     },
     strongArms: {
         name: 'Strong Arms',
-        icon: '💪',
+        icon: '<img class="strongarm" src="assets/strong.png" alt="strong arms">',
         description: '+100% money per chop'
     },
     autoChop: {
         name: 'Auto-Chop',
-        icon: '🤖',
+        icon: '<img class="robot" src="assets/robot.png" alt="robot">',
         description: 'Automatic chopping every 2 seconds'
     }
 };

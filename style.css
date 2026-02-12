@@ -286,6 +286,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+.chop-icon img {
+    width: 100px;
+}
+
 .chop-text {
     display: block;
 }

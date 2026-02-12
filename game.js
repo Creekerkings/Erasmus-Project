@@ -82,7 +82,7 @@ const upgradeInfo = {
     },
     sharpAxe: {
         name: 'Sharp Axe',
-        icon: '🪓',
+        icon: '<img src="assets/axe.png" alt="Axe" style="width: 24px; vertical-align: middle;">',
         description: '+50% money per chop'
     },
     strongArms: {

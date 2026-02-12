@@ -4,7 +4,7 @@ let gameState = {
     totalClicks: 0,
     currentWood: 'oak',
     woodTypes: {
-        oak: { unlocked: true, icon: '🌳', bonus: 1, cost: 0, name: 'Oak Wood' },
+        oak: { unlocked: true, icon: '', bonus: 1, cost: 0, name: 'Oak Wood' },
         birch: { unlocked: false, icon: '🌲', bonus: 1.5, cost: 100, name: 'Birch Wood' },
         cherry: { unlocked: false, icon: '🍁', bonus: 2, cost: 500, name: 'Cherry Wood' },
         jungle: { unlocked: false, icon: '🌲', bonus: 3, cost: 2000, name: 'Jungle Wood' },
@@ -18,6 +18,7 @@ let gameState = {
         autoChop: { level: 0, maxLevel: 5, baseCost: 5000, costMultiplier: 4 }
     }
 };
+
 
 // Upgrade Information
 const upgradeInfo = {

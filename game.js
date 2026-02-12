@@ -4,9 +4,9 @@ let gameState = {
     totalClicks: 0,
     currentWood: 'oak',
     woodTypes: {
-        oak: { unlocked: true, icon: '/assets/oakwood.png', bonus: 1, cost: 0, name: 'Oak Wood' },
+        oak: { unlocked: true, icon: 'assets/oakwood.png', bonus: 1, cost: 0, name: 'Oak Wood' },
         birch: { unlocked: false, icon: 'assets/birchwood.png', bonus: 1.5, cost: 100, name: 'Birch Wood' },
-        cherry: { unlocked: false, icon: 'assets/cherrywood.png', bonus: 2, cost: 500, name: 'Cherry Wood' },
+        cherry: { unlocked: false, icon: 'assets/cherriewood.png', bonus: 2, cost: 500, name: 'Cherry Wood' },
         jungle: { unlocked: false, icon: 'assets/pinewood.png', bonus: 3, cost: 2000, name: 'Jungle Wood' },
         dark_oak: { unlocked: false, icon: 'assets/wallnut.png', bonus: 5, cost: 10000, name: 'Dark Oak Wood' },
         spruce: { unlocked: false, icon: 'assets/maplewood.png', bonus: 10, cost: 50000, name: 'Spruce Wood' }
@@ -202,6 +202,7 @@ function renderWoodTypes() {
             <div class="wood-header">
                 <span class="wood-icon"><img src='${wood.icon}'></span>
                 <span class="wood-name">${wood.name}</span>
+                <span class="wood-name">${wood.cost}€</span>
             </div>
             <div class="wood-bonus">${bonusText}</div>
             ${!wood.unlocked ? `<div class="wood-cost">Cost: €${wood.cost.toLocaleString()}</div>` : ''}

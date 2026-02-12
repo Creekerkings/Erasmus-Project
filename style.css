@@ -472,6 +472,22 @@ footer {
     background: var(--accent-gold);
 }
 
+/* Links-Panel: Kleine Icons */
+.wood-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Mitte-Panel: Großes Icon */
+.wood-icon-large img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+
+
 /* Animations */
 @keyframes fadeInDown {
     from {

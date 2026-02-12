@@ -20,6 +20,7 @@ let gameState = {
 };
 
 
+
 // Upgrade Information
 const upgradeInfo = {
     doubleSwing: {

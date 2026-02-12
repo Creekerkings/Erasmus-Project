@@ -20,6 +20,58 @@ let gameState = {
 };
 
 
+// Color schemes for each wood type
+const woodColorSchemes = {
+    oak: {
+        panelBg: 'rgba(144, 86, 20, 0.9)',
+        textColor: '#FFFFFF',
+        accentColor: '#D4A574',
+        buttonColor: '#8B6F47'
+    },
+    birch: {
+        panelBg: 'rgba(240, 230, 210, 0.9)',
+        textColor: '#2C1810',
+        accentColor: '#C8B08D',
+        buttonColor: '#A8926B'
+    },
+    cherry: {
+        panelBg: 'rgba(160, 82, 82, 0.9)',
+        textColor: '#FFFFFF',
+        accentColor: '#D4A5A5',
+        buttonColor: '#A85252'
+    },
+    jungle: {
+        panelBg: 'rgba(191, 157, 102, 0.9)',
+        textColor: '#FFFFFF',
+        accentColor: '#c8b990',
+        buttonColor: '#947e3d'
+    },
+    dark_oak: {
+        panelBg: 'rgba(64, 40, 20, 0.9)',
+        textColor: '#E8D4B8',
+        accentColor: '#8B6F47',
+        buttonColor: '#533D28'
+    },
+    spruce: {
+        panelBg: 'rgba(100, 70, 40, 0.9)',
+        textColor: '#FFFFFF',
+        accentColor: '#D4A574',
+        buttonColor: '#8B5A2B'
+    }
+};
+
+// Change UI colors based on wood type
+function changeUIColors(woodType) {
+    const colors = woodColorSchemes[woodType];
+    
+    if (!colors) return;
+    
+    // Update CSS variables
+    document.documentElement.style.setProperty('--panel-bg', colors.panelBg);
+    document.documentElement.style.setProperty('--panel-text', colors.textColor);
+    document.documentElement.style.setProperty('--panel-accent', colors.accentColor);
+    document.documentElement.style.setProperty('--panel-button', colors.buttonColor);
+}
 
 // Upgrade Information
 const upgradeInfo = {
@@ -48,6 +100,7 @@ const upgradeInfo = {
 // Initialize Game
 function initGame() {
     loadGame();
+    changeUIColors(gameState.currentWood); // Set initial colors
     updateUI();
     renderWoodTypes();
     renderUpgrades();
@@ -140,6 +193,7 @@ function switchWood(woodType) {
             gameState.money -= wood.cost;
             wood.unlocked = true;
             gameState.currentWood = woodType;
+            changeUIColors(woodType); // Change colors
             updateUI();
             renderWoodTypes();
             saveGame();
@@ -148,6 +202,7 @@ function switchWood(woodType) {
         }
     } else {
         gameState.currentWood = woodType;
+        changeUIColors(woodType); // Change colors
         updateUI();
         saveGame();
     }

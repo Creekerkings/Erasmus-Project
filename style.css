@@ -11,6 +11,12 @@
     --text-dark: #000000;
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* Dynamic color variables (changed by JavaScript) */
+    --panel-bg: rgba(144, 86, 20, 0.9);
+    --panel-text: #FFFFFF;
+    --panel-accent: #D4A574;
+    --panel-button: #8B6F47;
 }
 
 * {
@@ -82,12 +88,13 @@ h1 {
 .wood-panel,
 .chop-panel,
 .stats-panel {
-    background: rgba(144, 86, 20, 0.9);
+    background: var(--panel-bg);
     backdrop-filter: blur(10px);
     border: 2px solid #000000;
     border-radius: 25px;
     padding: 25px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 .panel-header {
@@ -97,11 +104,12 @@ h1 {
 .panel-header h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
-    color: var(--text-dark);
+    color: var(--panel-text);
     letter-spacing: 3px;
     text-align: center;
     padding-bottom: 15px;
     border-bottom: 2px solid var(--glass-border);
+    transition: color 0.5s ease;
 }
 
 /* Wood Types (Left Panel) */
@@ -179,6 +187,8 @@ h1 {
 .wood-name {
     font-size: 1.1rem;
     font-weight: 600;
+    color: var(--panel-text);
+    transition: color 0.5s ease;
 }
 
 .wood-bonus {
@@ -216,15 +226,17 @@ h1 {
 #currentWoodName {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
-    color: var(--text-dark);
+    color: var(--panel-text);
     letter-spacing: 3px;
     margin: 15px 0 5px 0;
+    transition: color 0.5s ease;
 }
 
 .wood-multiplier {
     font-size: 1.2rem;
-    color: var(--accent-green);
+    color: var(--panel-accent);
     font-weight: 600;
+    transition: color 0.5s ease;
 }
 
 .chop-button {
@@ -232,12 +244,12 @@ h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
     padding: 40px 80px;
-    background: #ff9800;
+    background: var(--panel-button);
     color: white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     letter-spacing: 4px;
     overflow: hidden;
@@ -289,12 +301,15 @@ h1 {
 .stat-label {
     opacity: 0.8;
     margin-right: 8px;
+    color: var(--panel-text);
+    transition: color 0.5s ease;
 }
 
 .stat-value {
-    color: var(--text-dark);
+    color: var(--panel-text);
     font-weight: 700;
     font-size: 1.3rem;
+    transition: color 0.5s ease;
 }
 
 /* Stats Panel (Right) */
@@ -314,15 +329,17 @@ h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 10px;
-    color: var(--text-dark);
+    color: var(--panel-text);
+    transition: color 0.5s ease;
 }
 
 .money-amount {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3.5rem;
-    color: var(--text-dark);
+    color: var(--panel-text);
     letter-spacing: 3px;
     margin-bottom: 10px;
+    transition: color 0.5s ease;
 }
 
 .currency {
@@ -371,6 +388,8 @@ h1 {
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--panel-text);
+    transition: color 0.5s ease;
 }
 
 .upgrade-icon {
@@ -391,6 +410,8 @@ h1 {
     opacity: 0.85;
     margin-bottom: 12px;
     line-height: 1.4;
+    color: var(--panel-text);
+    transition: color 0.5s ease;
 }
 
 .upgrade-button {
